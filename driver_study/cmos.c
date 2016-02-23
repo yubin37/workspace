@@ -1,8 +1,8 @@
 #include <linux/fs.h>
 #include <linux/cdev.h>
 #include <linux/types.h>
-#include <include/slab.h>
-#include <asm/uacess.h>
+#include <linux/slab.h>
+#include <asm/uaccess.h>
 #include <linux/pci.h>
 
 #define NUM_CMOS_BANKS 2
@@ -209,7 +209,7 @@ cmos_cleanup(void)
 	/* Destroy cmos_class */
 	class_destroy(cmos_class);
 
-	return();
+	return;
 }
 
 module_init(cmos_init);
